@@ -6,14 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".activity.MapsActivity2">
 
-<!--    <ir.map.sdk_map.maps.MapView-->
-<!--        android:id="@+id/map_view"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        mapbox:mapbox_cameraZoomMax="20"-->
-<!--        mapbox:mapbox_cameraZoomMin="1"-->
-<!--        tools:ignore="MissingClass" />-->
-
 
     <TextView
         android:id="@+id/save_map"

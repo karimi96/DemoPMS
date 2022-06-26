@@ -58,7 +58,11 @@ class MapsActivity2 : AppCompatActivity() {
            dialog.close_dialog.setOnClickListener { dialog.dismiss() }
             dialog.save_dialog.setOnClickListener { checkEditText(dialog) }
 
+            dialog.window?.attributes!!.windowAnimations = R.style.MyDialogAnimation
             dialog.show()
+
+//            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+
 
         }
     }
