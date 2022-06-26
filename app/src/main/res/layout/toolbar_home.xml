@@ -10,6 +10,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/iran_sans"
         android:text="کاربران"
+        android:textStyle="bold"
         android:layout_centerVertical="true"
         android:layout_marginStart="10dp"
         android:textColor="@color/white"
