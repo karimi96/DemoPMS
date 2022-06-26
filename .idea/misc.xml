@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/GoogleMap/app/src/main/res/drawable-v24/border_dialog.xml" value="0.1145" />
+        <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/GoogleMap/app/src/main/res/drawable/border_btn.xml" value="0.1145" />
+        <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/GoogleMap/app/src/main/res/drawable/home_ic.xml" value="0.1485" />
+        <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/GoogleMap/app/src/main/res/drawable/ic_phone_call_1.xml" value="0.1605" />
+        <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/GoogleMap/app/src/main/res/drawable/ic_pos_icon.xml" value="0.1605" />
+        <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/GoogleMap/app/src/main/res/drawable/ic_round_close_24.xml" value="0.2115" />
+        <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/GoogleMap/app/src/main/res/drawable/ic_user.xml" value="0.1605" />
+        <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/GoogleMap/app/src/main/res/drawable/item_border_map.xml" value="0.1485" />
+        <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/GoogleMap/app/src/main/res/layout/activity_main.xml" value="0.18" />
+        <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/GoogleMap/app/src/main/res/layout/activity_maps.xml" value="0.1" />
+        <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/GoogleMap/app/src/main/res/layout/activity_maps2.xml" value="0.1947463768115942" />
+        <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/GoogleMap/app/src/main/res/layout/dialog_get_user.xml" value="0.33" />
+        <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/GoogleMap/app/src/main/res/layout/dialog_show_user.xml" value="0.67" />
+        <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/GoogleMap/app/src/main/res/layout/item_list_customer.xml" value="0.33" />
+        <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/GoogleMap/app/src/main/res/layout/list_item_customer.xml" value="0.16168478260869565" />
+        <entry key="..\:/new/Root/AndroidStudio/Kotlin Project/GoogleMap/app/src/main/res/layout/toolbar_home.xml" value="0.18840579710144928" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
