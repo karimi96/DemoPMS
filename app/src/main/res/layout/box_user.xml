@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_user"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="15dp"
+    android:background="@drawable/border_dialog"
+    android:paddingVertical="10dp">
+
+
+    <TextView
+        android:id="@+id/title_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/iran_sans"
+        android:gravity="center"
+        android:paddingVertical="5dp"
+        android:text="اطلاعات کاربر"
+        android:textColor="#4D5266" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/title_user"
+        android:layout_marginHorizontal="15dp"
+        android:background="@color/text_hint" />
+
+
+    <LinearLayout
+        android:id="@+id/ln1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="3dp"
+        android:orientation="horizontal"
+        android:paddingVertical="5dp"
+        android:weightSum="2">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/iran_sans"
+            android:text="صاحب دستگاه"
+            android:textColor="@color/text_hint" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/iran_sans"
+            android:gravity="end"
+            android:text="کاظم علیزاده"
+            android:textColor="@color/text_main" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ln2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ln1"
+        android:layout_marginHorizontal="15dp"
+        android:orientation="horizontal"
+        android:paddingVertical="5dp"
+        android:weightSum="2">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/iran_sans"
+            android:text="تلفن ثابت"
+            android:textColor="@color/text_hint" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/iran_sans_fanum"
+            android:gravity="end"
+            android:text="02537787414"
+            android:textColor="@color/text_main" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ln3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ln2"
+        android:layout_marginHorizontal="15dp"
+        android:orientation="horizontal"
+        android:paddingVertical="5dp"
+        android:weightSum="2">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/iran_sans"
+            android:text="تلفن همراه"
+            android:textColor="@color/text_hint" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/iran_sans_fanum"
+            android:gravity="end"
+            android:text="0912158745"
+            android:textColor="@color/text_main" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ln4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ln3"
+        android:layout_marginHorizontal="15dp"
+        android:orientation="horizontal"
+        android:paddingVertical="5dp"
+        android:weightSum="2">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/iran_sans"
+            android:text="ادرس"
+            android:textColor="@color/text_hint" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/iran_sans_fanum"
+            android:gravity="end"
+            android:text="بلوار 15 خرداد ، کوچه 39"
+            android:textColor="@color/text_main" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
+
+

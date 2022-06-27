@@ -13,5 +13,6 @@
 
     <color name="border_line">#e8e8e8</color>
     <color name="text_main">#4D5266</color>
+    <color name="text_hint">#b7b7b7</color>
 
 </resources>

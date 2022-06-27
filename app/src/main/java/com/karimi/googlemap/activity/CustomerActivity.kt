@@ -1,7 +1,6 @@
 package com.karimi.googlemap.activity
 
 import android.app.Dialog
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -19,7 +18,7 @@ import com.karimi.googlemap.model.Customer
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.dialog_show_user.*
 
-class MainActivity : AppCompatActivity() , CustomerAdapter.Listener{
+class CustomerActivity : AppCompatActivity() , CustomerAdapter.Listener{
     private lateinit var listRequest: List<Customer>
     private lateinit var adapter: CustomerAdapter
 
@@ -58,7 +57,7 @@ class MainActivity : AppCompatActivity() , CustomerAdapter.Listener{
 
     private fun initFab() {
         add.setOnClickListener {
-            startActivity(Intent(this, MapsActivity2::class.java))
+            startActivity(Intent(this, CustomerDetailActivity::class.java))
         }
     }
 
