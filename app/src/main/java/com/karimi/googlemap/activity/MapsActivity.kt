@@ -3,6 +3,7 @@ package com.karimi.googlemap.activity
 import android.app.Dialog
 import android.os.Bundle
 import android.text.TextUtils
+import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.Toast
@@ -11,21 +12,76 @@ import com.karimi.googlemap.R
 import com.karimi.googlemap.database.DatabaseHelper
 import com.karimi.googlemap.database.dao.CustomerDao
 import com.karimi.googlemap.model.Customer
+import com.yandex.mapkit.Animation
+import com.yandex.mapkit.MapKitFactory
+import com.yandex.mapkit.geometry.Point
+import com.yandex.mapkit.map.CameraPosition
+import com.yandex.mapkit.mapview.MapView
 import kotlinx.android.synthetic.main.activity_maps2.*
 import kotlinx.android.synthetic.main.dialog_get_user.*
 
 
 class MapsActivity2 : AppCompatActivity() {
 
+
+//    map
+    private val MAPKIT_API_KEY: String? = "your_api_key"
+    private val TARGET_LOCATION: Point = Point(59.945933, 30.320045)
+
+    private var mapView: MapView? = null
+//    map
+
     //     lateinit var listener : Listener
     private lateinit var db: DatabaseHelper
     private lateinit var dao: CustomerDao
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        /**
+         * Set the api key before calling initialize on MapKitFactory.
+         * It is recommended to set api key in the Application.onCreate method,
+         * but here we do it in each activity to make examples isolated.
+         */
+        /**
+         * Set the api key before calling initialize on MapKitFactory.
+         * It is recommended to set api key in the Application.onCreate method,
+         * but here we do it in each activity to make examples isolated.
+         */
+        MapKitFactory.setApiKey(MAPKIT_API_KEY!!)
+        /**
+         * Initialize the library to load required native libraries.
+         * It is recommended to initialize the MapKit library in the Activity.onCreate method
+         * Initializing in the Application.onCreate method may lead to extra calls and increased battery use.
+         */
+        /**
+         * Initialize the library to load required native libraries.
+         * It is recommended to initialize the MapKit library in the Activity.onCreate method
+         * Initializing in the Application.onCreate method may lead to extra calls and increased battery use.
+         */
+        MapKitFactory.initialize(this)
+
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps2)
         initDataBase()
         initSaveBtn()
+
+
+
+//        map
+
+        // Now MapView can be created.
+        // Now MapView can be created.
+        mapView = findViewById<View>(R.id.mapview) as MapView
+
+        // And to show what can be done with it, we move the camera to the center of Saint Petersburg.
+
+        // And to show what can be done with it, we move the camera to the center of Saint Petersburg.
+        mapView!!.getMap().move(
+            CameraPosition(TARGET_LOCATION, 14.0f, 0.0f, 0.0f),
+            Animation(Animation.Type.SMOOTH, 5f),
+            null
+        )
+//        map
     }
 
 
@@ -38,6 +94,22 @@ class MapsActivity2 : AppCompatActivity() {
 //        this.listener = listener
 //    }
 
+
+//    map
+    override fun onStop() {
+        // Activity onStop call must be passed to both MapView and MapKit instance.
+        mapView!!.onStop()
+        MapKitFactory.getInstance().onStop()
+        super.onStop()
+    }
+
+    override fun onStart() {
+        // Activity onStart call must be passed to both MapView and MapKit instance.
+        super.onStart()
+        MapKitFactory.getInstance().onStart()
+        mapView!!.onStart()
+    }
+//    map
 
     private fun initSaveBtn() {
         save_map.setOnClickListener {
