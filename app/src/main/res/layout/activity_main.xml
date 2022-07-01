@@ -6,8 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".activity.HomeActivity">
 
-    <include android:id="@+id/toolbar"
-        layout="@layout/toolbar_home"/>
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_home" />
 
 <androidx.recyclerview.widget.RecyclerView
     android:id="@+id/recycler"
