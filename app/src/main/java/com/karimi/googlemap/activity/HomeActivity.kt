@@ -57,7 +57,8 @@ class CustomerActivity : AppCompatActivity() , CustomerAdapter.Listener{
 
     private fun initFab() {
         add.setOnClickListener {
-            startActivity(Intent(this, CustomerDetailActivity::class.java))
+            startActivity(Intent(this, RoomAssetActivity::class.java))
+//            startActivity(Intent(this, CustomerDetailActivity::class.java))
         }
     }
 
