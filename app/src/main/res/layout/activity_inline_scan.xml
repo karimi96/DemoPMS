@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InlineScanActivity">
+    tools:context=".activity.InlineScanActivity">
 
         <com.journeyapps.barcodescanner.DecoratedBarcodeView
             android:id="@+id/barcodeView"
             android:layout_width="match_parent"
             android:layout_height="135dp"
-            app:zxing_scanner_layout="@layout/custom_barcode_layout" />
+            app:zxing_scanner_layout="@layout/custom_barcode_layout"
+            tools:ignore="MissingConstraints" />
 
         <Button
             android:text="*"

@@ -3,6 +3,7 @@ package com.karimi.googlemap.activity
 import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
@@ -15,10 +16,11 @@ import com.karimi.googlemap.adapter.CustomerAdapter
 import com.karimi.googlemap.database.DatabaseHelper
 import com.karimi.googlemap.database.dao.CustomerDao
 import com.karimi.googlemap.model.Customer
+import com.karimi.googlemap.sqlite.DBHelperJavaSimin
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.dialog_show_user.*
 
-class CustomerActivity : AppCompatActivity() , CustomerAdapter.Listener{
+class HomeActivity : AppCompatActivity() , CustomerAdapter.Listener{
     private lateinit var listRequest: List<Customer>
     private lateinit var adapter: CustomerAdapter
 
@@ -27,6 +29,28 @@ class CustomerActivity : AppCompatActivity() , CustomerAdapter.Listener{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+//        var db = DBHelperJava(this)
+//        var array : ArrayList<String> = ArrayList()
+//        array.add(db.part.toString())
+//        Log.e("222", "onCreate: " + array[0])
+
+
+//
+//        var db = DBHelperJavaSimin(this)
+//        var array : ArrayList<String> = ArrayList()
+//        array.add(db.getTerminal_number("04128303").toString())
+//        Log.e("222", "onCreate: " + array)
+
+
+
+//
+        var db = DBHelperJavaSimin(this)
+        var name = db.getTerminal_number("04129157")
+        Log.e("222", "onCreate: " + name[1])
+
+
+
         initDB()
         initFab()
         setReverseRecycler()
@@ -57,8 +81,8 @@ class CustomerActivity : AppCompatActivity() , CustomerAdapter.Listener{
 
     private fun initFab() {
         add.setOnClickListener {
-            startActivity(Intent(this, RoomAssetActivity::class.java))
-//            startActivity(Intent(this, CustomerDetailActivity::class.java))
+            startActivity(Intent(this, CustomerDetailActivity::class.java))
+//            startActivity(Intent(this, RoomAssetActivity::class.java))
         }
     }
 
