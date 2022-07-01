@@ -9,19 +9,24 @@
     <RelativeLayout
         android:id="@+id/rl_scan"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-            <TextView
-                android:id="@+id/scan"
-                android:text="اسکن بارکد"
-                android:textColor="@color/white"
-                android:fontFamily="@font/iran_sans"
-                android:textSize="16dp"
-                android:layout_margin="20dp"
-                android:gravity="center"
-                android:background="@drawable/border_btn"
-                android:paddingVertical="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/scan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/border_btn"
+            android:fontFamily="@font/iran_sans"
+            android:gravity="center"
+            android:paddingVertical="10dp"
+            android:text="اسکن بارکد"
+            android:textColor="@color/white"
+            android:textSize="16dp" />
 
         <EditText
             android:id="@+id/et_TerminalNumber"
@@ -30,10 +35,10 @@
             android:layout_below="@id/scan"
             android:layout_marginHorizontal="20dp"
             android:backgroundTint="#b7b7b7"
-            android:paddingHorizontal="10dp"
             android:fontFamily="@font/iran_sans_fanum"
             android:hint="شماره پایانه"
             android:inputType="number"
+            android:paddingHorizontal="10dp"
             android:textColor="#4D5266"
             android:textColorHint="#b7b7b7"
             android:textSize="14dp" />
@@ -56,51 +61,57 @@
     </RelativeLayout>
 
 
-    <RelativeLayout
-        android:visibility="gone"
-        android:id="@+id/rl_information"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
-        <include
-            android:id="@+id/include_title"
-            layout="@layout/box_title"
+        <RelativeLayout
+            android:id="@+id/rl_information"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="15dp"
-            android:layout_marginTop="15dp" />
-
-        <include
-            android:id="@+id/include_user"
-            layout="@layout/box_user"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/include_title"
-            android:layout_margin="15dp" />
-
-        <include
-            android:id="@+id/include_device"
-            layout="@layout/box_device_"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/include_user"
-            android:layout_marginHorizontal="15dp" />
-
-        <TextView
-            android:id="@+id/btn_record_location"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/border_btn"
-            android:fontFamily="@font/iran_sans"
-            android:gravity="center"
-            android:paddingVertical="10dp"
-            android:text="ثبت موقعیت"
-            android:textColor="@color/white"
-            android:textSize="16dp" />
+            android:visibility="gone">
 
 
-    </RelativeLayout>
+            <include
+                android:id="@+id/include_title"
+                layout="@layout/box_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="15dp" />
+
+            <include
+                android:id="@+id/include_user"
+                layout="@layout/box_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/include_title"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp" />
+
+            <include
+                android:id="@+id/include_device"
+                layout="@layout/box_device_"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/include_user"
+                android:layout_marginHorizontal="15dp" />
+
+
+
+    <TextView
+                android:id="@+id/btn_record_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/border_btn"
+                android:fontFamily="@font/iran_sans"
+                android:gravity="center"
+                android:paddingVertical="10dp"
+                android:text="ثبت موقعیت"
+                android:textColor="@color/white"
+                android:textSize="16dp" />
 
 
 </RelativeLayout>
+
+    </RelativeLayout>

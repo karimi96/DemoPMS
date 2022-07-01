@@ -15,15 +15,17 @@
         android:weightSum="2">
 
         <TextView
+            android:id="@+id/storeName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/iran_sans"
             android:text="کیتوبال"
             android:layout_gravity="center_vertical"
-            android:textColor="@color/text_hint" />
+            android:textColor="@color/text_main" />
 
         <TextView
+            android:id="@+id/terminalNumber_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"

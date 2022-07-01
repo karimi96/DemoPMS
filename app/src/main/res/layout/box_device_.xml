@@ -43,14 +43,17 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textSize="13dp"
             android:fontFamily="@font/iran_sans"
             android:text="صاحب دستگاه"
             android:textColor="@color/text_hint" />
 
         <TextView
+            android:id="@+id/support_Tecnisiyan"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textSize="13dp"
             android:fontFamily="@font/iran_sans"
             android:gravity="end"
             android:text="علی پاشایی راد"
@@ -73,16 +76,19 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textSize="13dp"
             android:fontFamily="@font/iran_sans"
             android:text="شماره پایانه"
             android:textColor="@color/text_hint" />
 
         <TextView
+            android:id="@+id/terminalNumber_info"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/iran_sans_fanum"
             android:gravity="end"
+            android:textSize="13dp"
             android:text="41350555"
             android:textColor="@color/text_main" />
 
@@ -103,14 +109,18 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textSize="13dp"
             android:fontFamily="@font/iran_sans"
-            android:text="کد شاخص"
+            android:text="مدل دستگاه"
             android:textColor="@color/text_hint" />
 
         <TextView
+            android:id="@+id/deviceModel"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textSize="13dp"
+            android:layout_gravity="left|center"
             android:fontFamily="@font/iran_sans_fanum"
             android:gravity="end"
             android:text="1009"
@@ -132,14 +142,17 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textSize="13dp"
             android:fontFamily="@font/iran_sans"
-            android:text="تعداد رول"
+            android:text="سریال دستگاه"
             android:textColor="@color/text_hint" />
 
         <TextView
+            android:id="@+id/deviceSerial"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textSize="13dp"
             android:fontFamily="@font/iran_sans_fanum"
             android:gravity="end"
             android:text="4"
@@ -161,17 +174,20 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textSize="13dp"
             android:fontFamily="@font/iran_sans"
-            android:text="ردیف"
+            android:text="تعداد رول"
             android:textColor="@color/text_hint" />
 
         <TextView
+            android:id="@+id/rollNumber"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/iran_sans_fanum"
             android:gravity="end"
             android:text="126"
+            android:textSize="13dp"
             android:textColor="@color/text_main" />
 
     </LinearLayout>
