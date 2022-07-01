@@ -12,7 +12,7 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         Handler().postDelayed({
-            val mIntent = Intent(this@SplashActivity, CustomerActivity::class.java)
+            val mIntent = Intent(this@SplashActivity, HomeActivity::class.java)
             startActivity(mIntent)
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
             finish()
