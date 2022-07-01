@@ -1,10 +1,11 @@
-package com.karimi.googlemap.activity
+package com.karimi.googlemap.activity.splash
 
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import com.karimi.googlemap.R
+import com.karimi.googlemap.activity.HomeActivity
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

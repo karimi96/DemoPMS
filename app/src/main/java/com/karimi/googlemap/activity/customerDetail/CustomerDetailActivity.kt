@@ -1,4 +1,4 @@
-package com.karimi.googlemap.activity
+package com.karimi.googlemap.activity.customerDetail
 
 import android.app.Dialog
 import android.content.Intent
@@ -10,12 +10,14 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.zxing.integration.android.IntentIntegrator
 import com.google.zxing.integration.android.IntentResult
 import com.karimi.googlemap.R
+import com.karimi.googlemap.activity.MapsActivity
 import com.karimi.googlemap.sqlite.DBHelperJavaSimin
 import kotlinx.android.synthetic.main.activity_customer_detaile.*
 import kotlinx.android.synthetic.main.box_device_.*
 import kotlinx.android.synthetic.main.box_title.*
 import kotlinx.android.synthetic.main.box_user.*
 import kotlinx.android.synthetic.main.dialog_no_found_item.*
+import kotlinx.android.synthetic.main.toolbar_detail.*
 
 class CustomerDetailActivity : AppCompatActivity() {
     var scannedResult: String = ""
@@ -32,6 +34,7 @@ class CustomerDetailActivity : AppCompatActivity() {
                 IntentIntegrator(this).initiateScan();
             }
         }
+        initBack()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -54,9 +57,6 @@ class CustomerDetailActivity : AppCompatActivity() {
     }
 
 
-
-
-
     private fun initInquiryUserInformation() {
         var db = DBHelperJavaSimin(this)
 
@@ -69,6 +69,7 @@ class CustomerDetailActivity : AppCompatActivity() {
                 showAlertDialog()
             } else {
                 rl_scan.visibility = View.GONE
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
                 rl_information.visibility = View.VISIBLE
                 userInformation(name)
             }
@@ -89,15 +90,18 @@ class CustomerDetailActivity : AppCompatActivity() {
         d.show()
     }
 
+
     private fun toast(text: String) {
         Toast.makeText(applicationContext, text, Toast.LENGTH_SHORT).show()
     }
+
 
     private fun initRecordLocation() {
         btn_record_location.setOnClickListener {
             startActivity(Intent(this, MapsActivity::class.java))
         }
     }
+
 
     private fun userInformation(info: ArrayList<String>) {
         storeName.text = info[0]
@@ -110,7 +114,10 @@ class CustomerDetailActivity : AppCompatActivity() {
         deviceModel.text = info[6]
         deviceSerial.text = info[7]
         rollNumber.text = info[8]
+    }
 
+    private fun initBack(){
+        img_back.setOnClickListener { finish() }
     }
 
 }

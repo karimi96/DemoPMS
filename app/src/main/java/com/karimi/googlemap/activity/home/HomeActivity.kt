@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.karimi.googlemap.R
+import com.karimi.googlemap.activity.customerDetail.CustomerDetailActivity
 import com.karimi.googlemap.adapter.CustomerAdapter
 import com.karimi.googlemap.database.DatabaseHelper
 import com.karimi.googlemap.database.dao.CustomerDao

@@ -21,7 +21,7 @@ import kotlinx.android.synthetic.main.activity_maps2.*
 import kotlinx.android.synthetic.main.dialog_get_user.*
 
 
-class MapsActivity2 : AppCompatActivity() {
+class MapsActivity : AppCompatActivity() {
 
 
 //    map
@@ -61,7 +61,7 @@ class MapsActivity2 : AppCompatActivity() {
 
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_maps2)
+        setContentView(R.layout.activity_maps)
         initDataBase()
         initSaveBtn()
 
@@ -83,16 +83,6 @@ class MapsActivity2 : AppCompatActivity() {
         )
 //        map
     }
-
-
-//    interface Listener{
-//        fun showDialog();
-//    }
-//
-//
-//     fun init(listener : Listener) {
-//        this.listener = listener
-//    }
 
 
 //    map

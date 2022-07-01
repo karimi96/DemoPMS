@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/in_toolbar"
-        android:visibility="visible">
+        android:visibility="gone">
 
         <TextView
             android:id="@+id/scan"
@@ -70,17 +70,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/in_toolbar"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <ScrollView
-            android:layout_above="@id/btn_record_location"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_above="@id/ln">
 
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
 
                 <include
@@ -105,27 +105,35 @@
                 <include
                     android:id="@+id/include_device"
                     layout="@layout/box_device_"
-                    android:layout_marginBottom="15dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/include_user"
-                    android:layout_marginHorizontal="15dp" />
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginBottom="15dp" />
             </LinearLayout>
         </ScrollView>
 
-
-        <TextView
-            android:id="@+id/btn_record_location"
+        <LinearLayout
+            android:id="@+id/ln"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:background="@color/blue2"
-            android:fontFamily="@font/iran_sans"
-            android:gravity="center"
-            android:paddingVertical="10dp"
-            android:text="ثبت موقعیت"
-            android:textColor="@color/white"
-            android:textSize="16dp" />
+            android:background="@drawable/ripple_btn"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/btn_record_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ic_location_"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/iran_sans"
+                android:gravity="center"
+                android:paddingVertical="10dp"
+                android:text="ثبت موقعیت"
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+        </LinearLayout>
 
     </RelativeLayout>
 

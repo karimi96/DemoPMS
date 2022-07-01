@@ -1,142 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="15dp"
-    app:cardCornerRadius="10dp"
-    android:outlineSpotShadowColor="@color/text_main"
-    app:cardElevation="4dp"
-    android:layout_height="wrap_content">
-
-
-
-<RelativeLayout
-    android:id="@+id/rl_user"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingVertical="10dp">
+    android:layout_margin="15dp"
+    android:outlineSpotShadowColor="@color/text_main"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="4dp">
 
 
-    <TextView
-        android:id="@+id/title_user"
+    <RelativeLayout
+        android:id="@+id/rl_user"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:fontFamily="@font/iran_sans"
-        android:gravity="center"
-        android:paddingVertical="5dp"
-        android:text="اطلاعات کاربر"
-        android:textColor="#4D5266" />
+        android:paddingVertical="10dp">
 
-    <View
-        android:id="@+id/line"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_below="@id/title_user"
-        android:layout_marginHorizontal="14dp"
-        android:background="@color/text_hint" />
-
-
-    <LinearLayout
-        android:id="@+id/ln1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/line"
-        android:layout_marginHorizontal="15dp"
-        android:layout_marginTop="3dp"
-        android:orientation="horizontal"
-        android:paddingVertical="5dp"
-        android:weightSum="2">
 
         <TextView
-            android:layout_width="0dp"
+            android:id="@+id/title_user"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textSize="13dp"
+            android:layout_centerHorizontal="true"
             android:fontFamily="@font/iran_sans"
-            android:text="صاحب دستگاه"
-            android:textColor="@color/text_hint" />
+            android:gravity="center"
+            android:paddingVertical="5dp"
+            android:text="اطلاعات کاربر"
+            android:textColor="#4D5266" />
 
-        <TextView
-            android:id="@+id/customerName"
-            android:layout_width="0dp"
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/title_user"
+            android:layout_marginHorizontal="14dp"
+            android:background="@color/text_hint" />
+
+
+        <LinearLayout
+            android:id="@+id/ln1"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="@font/iran_sans"
-            android:gravity="end"
-            android:textSize="13dp"
-            android:text="کاظم علیزاده"
-            android:textColor="@color/text_main" />
+            android:layout_below="@id/line"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="3dp"
+            android:orientation="horizontal"
+            android:paddingVertical="5dp"
+            android:weightSum="2">
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/iran_sans"
+                android:text="صاحب دستگاه"
+                android:textColor="@color/text_hint"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/customerName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/iran_sans"
+                android:gravity="end"
+                android:text="کاظم علیزاده"
+                android:textColor="@color/text_main"
+                android:textSize="13dp" />
+
+        </LinearLayout>
 
 
-    <LinearLayout
-        android:id="@+id/ln2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/ln1"
-        android:layout_marginHorizontal="15dp"
-        android:orientation="horizontal"
-        android:paddingVertical="5dp"
-        android:weightSum="2">
-
-        <TextView
-            android:layout_width="0dp"
+        <LinearLayout
+            android:id="@+id/ln2"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textSize="13dp"
-            android:fontFamily="@font/iran_sans"
-            android:text="تلفن ثابت"
-            android:textColor="@color/text_hint" />
+            android:layout_below="@id/ln1"
+            android:layout_marginHorizontal="15dp"
+            android:orientation="horizontal"
+            android:paddingVertical="5dp"
+            android:weightSum="2">
 
-        <TextView
-            android:id="@+id/phone_sabet"
-            android:layout_width="0dp"
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/iran_sans"
+                android:text="تلفن ثابت"
+                android:textColor="@color/text_hint"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/phone_sabet"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/iran_sans_fanum"
+                android:gravity="end"
+                android:text="02537787414"
+                android:textColor="@color/text_main"
+                android:textSize="13dp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ln3"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="@font/iran_sans_fanum"
-            android:gravity="end"
-            android:textSize="13dp"
-            android:text="02537787414"
-            android:textColor="@color/text_main" />
+            android:layout_below="@id/ln2"
+            android:layout_marginHorizontal="15dp"
+            android:orientation="horizontal"
+            android:paddingVertical="5dp"
+            android:weightSum="2">
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/iran_sans"
+                android:text="تلفن همراه"
+                android:textColor="@color/text_hint"
+                android:textSize="13dp" />
 
+            <TextView
+                android:id="@+id/phone_hamrah"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/iran_sans_fanum"
+                android:gravity="end"
+                android:text="0912158745"
+                android:textColor="@color/text_main"
+                android:textSize="13dp" />
 
-    <LinearLayout
-        android:id="@+id/ln3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/ln2"
-        android:layout_marginHorizontal="15dp"
-        android:orientation="horizontal"
-        android:paddingVertical="5dp"
-        android:weightSum="2">
+        </LinearLayout>
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textSize="13dp"
-            android:fontFamily="@font/iran_sans"
-            android:text="تلفن همراه"
-            android:textColor="@color/text_hint" />
-
-        <TextView
-            android:id="@+id/phone_hamrah"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="@font/iran_sans_fanum"
-            android:gravity="end"
-            android:textSize="13dp"
-            android:text="0912158745"
-            android:textColor="@color/text_main" />
-
-    </LinearLayout>
-
-</RelativeLayout>
+    </RelativeLayout>
 
 </androidx.cardview.widget.CardView>
 
