@@ -1,9 +1,10 @@
-package com.karimi.googlemap.activity
+package com.karimi.googlemap.activity.home
 
 import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
@@ -19,9 +20,12 @@ import com.karimi.googlemap.database.dao.CustomerDao
 import com.karimi.googlemap.model.Customer
 import com.karimi.googlemap.sqlite.DBHelperJavaSimin
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.box_title.*
+import kotlinx.android.synthetic.main.box_user.*
 import kotlinx.android.synthetic.main.dialog_show_user.*
+import kotlinx.android.synthetic.main.toolbar_home.*
 
-class HomeActivity : AppCompatActivity() , CustomerAdapter.Listener{
+class HomeActivity : AppCompatActivity() {
     private lateinit var listRequest: List<Customer>
     private lateinit var adapter: CustomerAdapter
 
@@ -30,31 +34,22 @@ class HomeActivity : AppCompatActivity() , CustomerAdapter.Listener{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-//        var db = DBHelperJava(this)
-//        var array : ArrayList<String> = ArrayList()
-//        array.add(db.part.toString())
-//        Log.e("222", "onCreate: " + array[0])
-
-
-//
-//        var db = DBHelperJavaSimin(this)
-//        var array : ArrayList<String> = ArrayList()
-//        array.add(db.getTerminal_number("04128303").toString())
-//        Log.e("222", "onCreate: " + array)
-
-
-
-//
-        var db = DBHelperJavaSimin(this)
-        var name = db.getTerminal_number("04129157")
-        Log.e("222", "onCreate: " + name[1])
-
-
-
+        initToolbar()
         initDB()
         initFab()
         setReverseRecycler()
+    }
+
+
+    private fun initToolbar() {
+//        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        setSupportActionBar(findViewById(R.id.toolbar))
+    }
+
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_toolbar, menu)
+        return true
     }
 
     private fun toast(text: String) {
@@ -70,7 +65,7 @@ class HomeActivity : AppCompatActivity() , CustomerAdapter.Listener{
 
     private fun initRecycler() {
         initListAdapter()
-        adapter = CustomerAdapter(listRequest, applicationContext,this)
+        adapter = CustomerAdapter(listRequest, applicationContext)
         recycler.adapter = adapter
     }
 
@@ -83,7 +78,7 @@ class HomeActivity : AppCompatActivity() , CustomerAdapter.Listener{
     private fun initFab() {
         add.setOnClickListener {
             startActivity(Intent(this, CustomerDetailActivity::class.java))
-//            startActivity(Intent(this, RoomAssetActivity::class.java))
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
         }
     }
 
@@ -102,29 +97,30 @@ class HomeActivity : AppCompatActivity() , CustomerAdapter.Listener{
         super.onResume()
         if (dao.getAllCustomer().isNotEmpty()) {
             initRecycler()
-            noItem.visibility = View.GONE
+            lottie.visibility = View.GONE
         }else {
-            noItem.visibility = View.VISIBLE
+            lottie.visibility = View.VISIBLE
 
         }
     }
 
-    override fun showDialogDetail(list: List<Customer> , pos: Int) {
-                val metrics = resources.displayMetrics
-                val width = metrics.widthPixels
-                val height = metrics.heightPixels
-                val dialog = Dialog(this)
-                dialog.setContentView(R.layout.dialog_show_user)
-                dialog.setCancelable(false)
-                dialog.window?.setLayout(((6.3 * width) / 7).toInt(), ViewGroup.LayoutParams.WRAP_CONTENT)
-                dialog.window?.setBackgroundDrawableResource(R.drawable.border_dialog)
-                dialog.close_c.setOnClickListener { dialog.dismiss() }
-                dialog.name_c.text = list[pos].name
-                dialog.device_c.text = list[pos].device
-                dialog.phone_c.text = list[pos].phone
-                dialog.address_c.text = list[pos].address
-                dialog.show()
-    }
+//    override fun showDialogDetail(list: List<Customer>, pos: Int) {
+//        val metrics = resources.displayMetrics
+//        val width = metrics.widthPixels
+//        val height = metrics.heightPixels
+//        val dialog = Dialog(this)
+//        dialog.setContentView(R.layout.dialog_show_user)
+//        dialog.setCancelable(true)
+////        dialog.window?.setLayout(((6.3 * width) / 7).toInt(), ViewGroup.LayoutParams.WRAP_CONTENT)
+//        dialog.window?.setLayout(((6.3 * width) / 7).toInt(), ((6 * height) / 7).toInt())
+//        dialog.window?.setBackgroundDrawableResource(R.drawable.border_dialog)
+////        dialog.close_c.setOnClickListener { dialog.dismiss() }
+//        dialog.storeName.text = list[pos].storeName
+//        dialog.terminalNumber_title.text = list[pos].terminalnNumer
+//        dialog.customerName.text = list[pos].deviceOwner
+//        dialog.phone_sabet.text = list[pos].phoneSabet
+//        dialog.show()
+//    }
 
     private fun setReverseRecycler() {
         val linearLayoutManager = LinearLayoutManager(this)
@@ -132,7 +128,5 @@ class HomeActivity : AppCompatActivity() , CustomerAdapter.Listener{
         linearLayoutManager.reverseLayout = true
         recycler.layoutManager = linearLayoutManager
     }
-
-
 
 }
