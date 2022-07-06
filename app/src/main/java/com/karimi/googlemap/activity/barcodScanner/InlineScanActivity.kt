@@ -1,4 +1,4 @@
-package com.karimi.googlemap.activity
+package com.karimi.googlemap.activity.barcodScanner
 
 import android.content.Context
 import android.os.Build

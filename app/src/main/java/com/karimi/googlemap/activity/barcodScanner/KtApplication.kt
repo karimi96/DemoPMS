@@ -1,8 +1,6 @@
-package com.karimi.googlemap.activity
+package com.karimi.googlemap.activity.barcodScanner
 
 import androidx.multidex.MultiDexApplication
-
-//import android.support.multidex.MultiDexApplication
 
 class KtApplication: MultiDexApplication(){
     override fun onCreate() {

@@ -1,4 +1,4 @@
-package com.karimi.googlemap.activity
+package com.karimi.googlemap.activity.barcodScanner
 
 import android.animation.ArgbEvaluator
 import android.animation.ValueAnimator
