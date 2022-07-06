@@ -3,26 +3,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.karimi.googlemap">
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
-        android:name=".activity.KtApplication"
+        android:name=".activity.barcodScanner.KtApplication"
         android:hardwareAccelerated="true"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_launcher_foreground"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/ic_launcher_background"
         android:supportsRtl="true"
         android:theme="@style/Theme.GoogleMap"
         tools:targetApi="31">
         <activity
-            android:name=".activity.ContinuousActivity"
+            android:name=".activity.barcodScanner.ContinuousActivity"
             android:exported="false" />
 
         <activity
             android:name=".activity.customerDetail.CustomerDetailActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".activity.splash.SplashActivity"
             android:exported="true">
@@ -33,11 +35,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.MapsActivity"
+            android:name=".activity.map.MapsActivity"
             android:exported="false" />
 
         <activity
-            android:name=".activity.HomeActivity"
+            android:name=".activity.home.HomeActivity"
             android:exported="true" />
     </application>
 
