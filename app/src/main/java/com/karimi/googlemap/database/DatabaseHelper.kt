@@ -46,7 +46,7 @@ abstract class DatabaseHelper : RoomDatabase() {
 //     second code
 companion object {
     private const val TAG = "AppDatabase"
-    private const val DATABASE_NAME = "inventory_database.db"
+    private const val DATABASE_NAME = "user-database.db"
 
     @Volatile
     private var instance: DatabaseHelper? = null
@@ -55,7 +55,6 @@ companion object {
         instance ?: synchronized(this) {
             instance ?: buildDatabase(context).also { instance = it }
         }
-
 
     private fun buildDatabase(appContext: Context): DatabaseHelper {
         val builder =
@@ -67,7 +66,17 @@ companion object {
         return builder.build()
     }
 
-
+  /*  private fun buildDatabase(appContext: Context): DatabaseHelper {
+        val builder =
+            Room.databaseBuilder(
+                appContext,
+                DatabaseHelper::class.java,
+                DATABASE_NAME
+            ).openHelperFactory(AssetSQLiteOpenHelperFactory())
+                .allowMainThreadQueries()
+        return builder.build()
+    }
+*/
 }
     abstract fun customerDao(): CustomerDao
 

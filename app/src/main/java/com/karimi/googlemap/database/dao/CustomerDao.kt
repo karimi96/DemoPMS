@@ -9,8 +9,18 @@ interface CustomerDao {
     @Query("SELECT * from customer_table")
     fun getAllCustomer() : List<Customer>
 
-//    @Query("select * from product where branch=:branch")
-//    fun selectProduct(branch: Int): List<Product>
+    @Query("SELECT * from customer_table where terminal_num = :terminal limit 1")
+    fun checkTerminal(terminal : String) : Customer
+
+    @Query("SELECT * from customer_table where customerID = :id limit 1")
+    fun getOneCustomer(id: Int) :Customer
+
+//    @Query("SELECT latitude,longitude from customer_table where customerID = :id")
+//    fun getLatLong(id: Int) :List<String>
+
+    @Query("UPDATE customer_table SET latitude = :lat ,longitude = :longitude where customerID = :id")
+    fun updateLatLong(lat : Double? , longitude: Double? , id: Int)
+
 
     @Insert
     fun insert(customer: Customer)
