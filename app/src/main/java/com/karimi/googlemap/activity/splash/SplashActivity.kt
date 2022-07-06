@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import com.karimi.googlemap.R
-import com.karimi.googlemap.activity.HomeActivity
+import com.karimi.googlemap.activity.home.HomeActivity
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,7 +17,7 @@ class SplashActivity : AppCompatActivity() {
             startActivity(mIntent)
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
             finish()
-        }, 2000)
+        }, 1500)
 
     }
 }
