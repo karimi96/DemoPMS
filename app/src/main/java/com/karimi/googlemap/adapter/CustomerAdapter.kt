@@ -1,6 +1,7 @@
 package com.karimi.googlemap.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.location.GnssAntennaInfo
 import android.os.Build
 import android.view.LayoutInflater
@@ -10,13 +11,14 @@ import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.karimi.googlemap.R
+import com.karimi.googlemap.activity.customerDetail.CustomerDetailActivity
 import com.karimi.googlemap.model.Customer
 import kotlinx.android.synthetic.main.list_item_customer.view.*
 
-class CustomerAdapter(list: List<Customer>, context: Context , listener: Listener) : RecyclerView.Adapter<CustomerAdapter.MyViewHolder>() {
+class CustomerAdapter(list: List<Customer>, context: Context ) : RecyclerView.Adapter<CustomerAdapter.MyViewHolder>() {
     var context :Context = context
     private var list: List<Customer> = list
-    var listener : Listener = listener
+//    var listener : Listener = listener
 
     interface Listener{
         fun showDialogDetail(list: List<Customer> , position: Int)
@@ -29,7 +31,14 @@ class CustomerAdapter(list: List<Customer>, context: Context , listener: Listene
         var phone: TextView = view.phone
 
         init {
-            itemView.setOnClickListener{listener.showDialogDetail(list,position) }
+            itemView.setOnClickListener{
+                var intent =  Intent(context, CustomerDetailActivity:: class.java)
+                intent.putExtra("id_home",list[position].customerID)
+                context.startActivity(intent)
+
+//                intent.putExtra("terminal",list[position].terminalnNumer)
+            }
+//            itemView.setOnClickListener{listener.showDialogDetail(list,position) }
         }
     }
 
@@ -42,9 +51,10 @@ class CustomerAdapter(list: List<Customer>, context: Context , listener: Listene
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         var customer = list[position]
 
-        holder.name.text = customer.name
-        holder.device.text = customer.device
-        holder.phone.text = customer.phone
+        holder.name.text = customer.deviceOwner
+        holder.device.text = customer.deviceModel
+//        holder.phone.text = customer.latitude.toString() + customer.longitude
+        holder.phone.text = customer.phoneHamrah
     }
 
     override fun getItemCount(): Int {
