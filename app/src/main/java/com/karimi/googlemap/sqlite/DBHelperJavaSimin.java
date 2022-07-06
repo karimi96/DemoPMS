@@ -21,7 +21,6 @@ public class DBHelperJavaSimin extends SQLiteOpenHelper {
     private String DB_PATH;
 
     private static String DB_NAME = "karimi.db";
-//    private static String DB_NAME = "nahid.db";
     public SQLiteDatabase mDB;
 
 
