@@ -214,6 +214,7 @@ public class DBHelperJavaSimin extends SQLiteOpenHelper {
             bb.add(cursor.getString(j));
             }
         }
+        Log.e("333", "getTerminal_number: " + bb );
         return bb;
     }
 

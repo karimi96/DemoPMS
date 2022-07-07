@@ -26,6 +26,9 @@ import androidx.room.PrimaryKey
     @ColumnInfo(name = "phone_hamrah")
     var phoneHamrah: String? = null
 
+    @ColumnInfo(name = "address")
+    var address: String? = null
+
     @ColumnInfo(name = "support_name")
     var supportName: String? = null
 
@@ -52,6 +55,7 @@ import androidx.room.PrimaryKey
         deviceOwner: String?,
         phoneSabet: String?,
         phoneHamrah: String?,
+        address: String?,
         supportName: String?,
         deviceModel: String?,
         deviceSerial: String?,
@@ -65,6 +69,7 @@ import androidx.room.PrimaryKey
         this.deviceOwner = deviceOwner
         this.phoneSabet = phoneSabet
         this.phoneHamrah = phoneHamrah
+        this.address = address
         this.supportName = supportName
         this.deviceModel = deviceModel
         this.deviceSerial = deviceSerial
@@ -74,14 +79,14 @@ import androidx.room.PrimaryKey
     }
 
 
-
-@Ignore
+    @Ignore
     constructor(
         storeName: String?,
         terminalnNumer: String?,
         deviceOwner: String?,
         phoneSabet: String?,
         phoneHamrah: String?,
+        address: String?,
         supportName: String?,
         deviceModel: String?,
         deviceSerial: String?,
@@ -89,12 +94,12 @@ import androidx.room.PrimaryKey
         longitude: Double?,
         latitude: Double?
     ) {
-        this.customerID = customerID
         this.storeName = storeName
         this.terminalnNumer = terminalnNumer
         this.deviceOwner = deviceOwner
         this.phoneSabet = phoneSabet
         this.phoneHamrah = phoneHamrah
+        this.address = address
         this.supportName = supportName
         this.deviceModel = deviceModel
         this.deviceSerial = deviceSerial
@@ -102,7 +107,6 @@ import androidx.room.PrimaryKey
         this.longitude = longitude
         this.latitude = latitude
     }
-
 
 
 }

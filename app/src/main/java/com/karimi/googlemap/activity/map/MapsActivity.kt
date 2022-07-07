@@ -166,7 +166,7 @@ class MapsActivity : AppCompatActivity() {
                 }else{
                     Log.e("111", "initSaveLocationBtn:  new user with "  +  geoPoint.longitude)
 
-                    dao.insert(Customer(userInfo[0],userInfo[1],userInfo[2],userInfo[3],userInfo[4],userInfo[5],
+                    dao.insert(Customer(userInfo[0],userInfo[1],userInfo[2],userInfo[3],userInfo[4],userInfo[9],userInfo[5],
                         userInfo[6],userInfo[7],userInfo[8],geoPoint.longitude , geoPoint.latitude))
                     finish()
                 }
