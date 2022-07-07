@@ -77,56 +77,29 @@
             android:layout_height="match_parent"
             android:layout_above="@id/btn_record_location">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <include
-                    android:id="@+id/include_title"
-                    layout="@layout/box_title"
+                <LinearLayout
+                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="15dp"
-                    android:layout_marginTop="15dp" />
+                    android:layout_height="match_parent">
 
-                <include
-                    android:id="@+id/include_user"
-                    layout="@layout/box_user"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/include_title"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="15dp"
-                    android:layout_marginBottom="15dp" />
+                    <include
+                        layout="@layout/box_title_detail" />
 
-                <include
-                    android:id="@+id/include_device"
-                    layout="@layout/box_device_"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/include_user"
-                    android:layout_marginHorizontal="15dp"
-                    android:layout_marginBottom="15dp" />
+                    <include layout="@layout/box_user_detail" />
 
-                <ImageView
-                    android:id="@+id/map_pic"
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:layout_margin="15dp"
-                    android:src="@drawable/map"
-                    android:visibility="gone" />
+                    <include layout="@layout/box_device_detail" />
 
-                <WebView
-                    android:id="@+id/mWebView"
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:layout_margin="15dp"
-                    android:background="@color/blue2"
-                    android:visibility="gone" />
+                    <WebView
+                        android:id="@+id/mWebView"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:layout_margin="15dp"
+                        android:background="@color/blue2"
+                        android:visibility="gone" />
+                </LinearLayout>
 
-            </LinearLayout>
+
+
         </ScrollView>
 
         <LinearLayout
