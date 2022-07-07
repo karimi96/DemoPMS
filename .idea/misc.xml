@@ -29,21 +29,27 @@
         <entry key="..\:/new/Root/AndroidStudio/Simin Project/GoogleMap/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.2015" />
         <entry key="..\:/new/Root/AndroidStudio/Simin Project/GoogleMap/app/src/main/res/drawable/ic_logo_seller.xml" value="0.1535" />
         <entry key="..\:/new/Root/AndroidStudio/Simin Project/GoogleMap/app/src/main/res/drawable/ic_logo_seller1.xml" value="0.1535" />
+        <entry key="..\:/new/Root/AndroidStudio/Simin Project/GoogleMap/app/src/main/res/drawable/ic_person.xml" value="0.2115" />
         <entry key="..\:/new/Root/AndroidStudio/Simin Project/GoogleMap/app/src/main/res/drawable/ic_phone_call_1.xml" value="0.1325" />
         <entry key="..\:/new/Root/AndroidStudio/Simin Project/GoogleMap/app/src/main/res/drawable/item_border_map.xml" value="0.1" />
         <entry key="..\:/new/Root/AndroidStudio/Simin Project/GoogleMap/app/src/main/res/drawable/ripple_btn.xml" value="0.1505" />
         <entry key="..\:/new/Root/AndroidStudio/Simin Project/GoogleMap/app/src/main/res/layout/activity_continuous.xml" value="0.13043478260869565" />
-        <entry key="..\:/new/Root/AndroidStudio/Simin Project/GoogleMap/app/src/main/res/layout/activity_customer_detaile.xml" value="0.25" />
+        <entry key="..\:/new/Root/AndroidStudio/Simin Project/GoogleMap/app/src/main/res/layout/activity_customer_detaile.xml" value="0.22" />
         <entry key="..\:/new/Root/AndroidStudio/Simin Project/GoogleMap/app/src/main/res/layout/activity_inline_scan.xml" value="0.13043478260869565" />
         <entry key="..\:/new/Root/AndroidStudio/Simin Project/GoogleMap/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/new/Root/AndroidStudio/Simin Project/GoogleMap/app/src/main/res/layout/activity_maps.xml" value="0.25" />
         <entry key="..\:/new/Root/AndroidStudio/Simin Project/GoogleMap/app/src/main/res/layout/activity_maps2.xml" value="0.1675213675213675" />
         <entry key="..\:/new/Root/AndroidStudio/Simin Project/GoogleMap/app/src/main/res/layout/activity_room_asset.xml" value="0.1675213675213675" />
         <entry key="..\:/new/Root/AndroidStudio/Simin Project/GoogleMap/app/src/main/res/layout/activity_splash.xml" value="0.67" />
+        <entry key="..\:/new/Root/AndroidStudio/Simin Project/GoogleMap/app/src/main/res/layout/activity_test.xml" value="0.16530797101449277" />
         <entry key="..\:/new/Root/AndroidStudio/Simin Project/GoogleMap/app/src/main/res/layout/box_device_.xml" value="0.2" />
+        <entry key="..\:/new/Root/AndroidStudio/Simin Project/GoogleMap/app/src/main/res/layout/box_device_detail.xml" value="0.5" />
         <entry key="..\:/new/Root/AndroidStudio/Simin Project/GoogleMap/app/src/main/res/layout/box_title.xml" value="0.42658730158730157" />
+        <entry key="..\:/new/Root/AndroidStudio/Simin Project/GoogleMap/app/src/main/res/layout/box_title_detail.xml" value="0.15806159420289856" />
         <entry key="..\:/new/Root/AndroidStudio/Simin Project/GoogleMap/app/src/main/res/layout/box_user.xml" value="0.3251366120218579" />
+        <entry key="..\:/new/Root/AndroidStudio/Simin Project/GoogleMap/app/src/main/res/layout/box_user_detail.xml" value="0.3439635535307517" />
         <entry key="..\:/new/Root/AndroidStudio/Simin Project/GoogleMap/app/src/main/res/layout/custom_barcode_layout.xml" value="0.13043478260869565" />
+        <entry key="..\:/new/Root/AndroidStudio/Simin Project/GoogleMap/app/src/main/res/layout/customer_detail.xml" value="0.25" />
         <entry key="..\:/new/Root/AndroidStudio/Simin Project/GoogleMap/app/src/main/res/layout/dialog_get_user.xml" value="0.1675213675213675" />
         <entry key="..\:/new/Root/AndroidStudio/Simin Project/GoogleMap/app/src/main/res/layout/dialog_no_found_item.xml" value="0.16666666666666666" />
         <entry key="..\:/new/Root/AndroidStudio/Simin Project/GoogleMap/app/src/main/res/layout/dialog_show_user.xml" value="0.1675213675213675" />
