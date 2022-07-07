@@ -34,16 +34,6 @@
         app:borderWidth="0dp"
         app:tint="@color/white" />
 
-    <!--    <TextView-->
-    <!--        android:id="@+id/noItem"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_centerInParent="true"-->
-    <!--        android:fontFamily="@font/iran_sans"-->
-    <!--        android:text="مشتری وجود ندارد"-->
-    <!--        android:textColor="#B7B7B7"-->
-    <!--        android:textSize="14dp" />-->
-
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottie"
         android:layout_width="wrap_content"

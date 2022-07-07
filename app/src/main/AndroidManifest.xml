@@ -2,15 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.karimi.googlemap">
+
     <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".activity.barcodScanner.KtApplication"
-        android:hardwareAccelerated="true"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
+        android:hardwareAccelerated="true"
         android:icon="@drawable/ic_launcher_foreground"
         android:label="@string/app_name"
         android:roundIcon="@drawable/ic_launcher_background"
@@ -18,9 +19,11 @@
         android:theme="@style/Theme.GoogleMap"
         tools:targetApi="31">
         <activity
+            android:name=".activity.Test"
+            android:exported="false" />
+        <activity
             android:name=".activity.barcodScanner.ContinuousActivity"
             android:exported="false" />
-
         <activity
             android:name=".activity.customerDetail.CustomerDetailActivity"
             android:exported="false"
@@ -37,7 +40,6 @@
         <activity
             android:name=".activity.map.MapsActivity"
             android:exported="false" />
-
         <activity
             android:name=".activity.home.HomeActivity"
             android:exported="true" />

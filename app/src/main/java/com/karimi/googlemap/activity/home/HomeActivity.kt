@@ -1,12 +1,9 @@
 package com.karimi.googlemap.activity.home
 
-import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.View
-import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -18,12 +15,7 @@ import com.karimi.googlemap.adapter.CustomerAdapter
 import com.karimi.googlemap.database.DatabaseHelper
 import com.karimi.googlemap.database.dao.CustomerDao
 import com.karimi.googlemap.model.Customer
-import com.karimi.googlemap.sqlite.DBHelperJavaSimin
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.box_title.*
-import kotlinx.android.synthetic.main.box_user.*
-import kotlinx.android.synthetic.main.dialog_show_user.*
-import kotlinx.android.synthetic.main.toolbar_home.*
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var listRequest: List<Customer>
@@ -38,6 +30,9 @@ class HomeActivity : AppCompatActivity() {
         initDB()
         initFab()
         setReverseRecycler()
+
+
+        test.setOnClickListener { startActivity(Intent(this , Test::class.java))}
     }
 
 
