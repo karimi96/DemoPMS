@@ -24,9 +24,12 @@ import com.karimi.googlemap.database.dao.CustomerDao
 import com.karimi.googlemap.model.Customer
 import com.karimi.googlemap.sqlite.DBHelperJavaSimin
 import kotlinx.android.synthetic.main.activity_customer_detaile.*
+import kotlinx.android.synthetic.main.activity_customer_detaile.et_TerminalNumber
 import kotlinx.android.synthetic.main.box_device_.*
+import kotlinx.android.synthetic.main.box_device_detail.*
 import kotlinx.android.synthetic.main.box_title.*
 import kotlinx.android.synthetic.main.box_user.*
+import kotlinx.android.synthetic.main.box_user_detail.*
 import kotlinx.android.synthetic.main.dialog_no_found_item.*
 import kotlinx.android.synthetic.main.toolbar_detail.*
 
@@ -131,18 +134,6 @@ class CustomerDetailActivity : AppCompatActivity() {
     }
 
 
-
-
-
-// call from inside an Activity...
-//    hideKeyboard(this, view);
-//    hideKeyboard(this, getCurrentFocus());
-//    hideKeyboard(this, getWindow().getDecorView());
-//    hideKeyboard(this, findViewById(android.R.id.content));
-
-
-
-
     private fun showAlertDialog() {
         val metrics = resources.displayMetrics
         val width = metrics.widthPixels
@@ -159,16 +150,46 @@ class CustomerDetailActivity : AppCompatActivity() {
 
     private fun newUserInformation(info: ArrayList<String>) {
         storeName.text = info[0]
-        terminalNumber_title.text = info[1]
-        customerName.text = info[2]
-        phone_sabet.text = info[3]
-        phone_hamrah.text = info[4]
-        support_Tecnisiyan.text = info[5]
-        terminalNumber_info.text = info[1]
-        deviceModel.text = info[6]
-        deviceSerial.text = info[7]
-        rollNumber.text = info[8]
+        et_OwnerDevice.setText(info[2])
+        et_PhoneSabet.setText(info[3])
+        et_PhoneHamrah.setText(info[4])
+        et_Address.setText(info[9])
+        et_SupportDevice.setText(info[5])
+        et_terminalNumber.setText(info[1])
+        et_DeviceModel.setText(info[6])
+        et_DeviceSerial.setText(info[7])
+        et_RollNumber.setText(info[8])
     }
+
+
+    private fun userInformationExist(c: Customer) {
+        storeName.text = c?.storeName
+        et_OwnerDevice.setText(c?.deviceOwner)
+        et_PhoneSabet.setText(c?.phoneSabet)
+        et_PhoneHamrah.setText(c?.phoneHamrah)
+        et_Address.setText(c?.address)
+        et_SupportDevice.setText(c?.supportName)
+        et_terminalNumber.setText(c?.terminalnNumer)
+        et_DeviceModel.setText(c?.deviceModel)
+        et_DeviceSerial.setText(c?.deviceSerial)
+        et_RollNumber.setText(c?.rollNumber)
+
+    }
+
+
+//    private fun newUserInformation(info: ArrayList<String>) {
+//        storeName.text = info[0]
+//        terminalNumber_title.text = info[1]
+//        customerName.text = info[2]
+//        phone_sabet.text = info[3]
+//        phone_hamrah.text = info[4]
+//        support_Tecnisiyan.text = info[5]
+//        terminalNumber_info.text = info[1]
+//        deviceModel.text = info[6]
+//        deviceSerial.text = info[7]
+//        rollNumber.text = info[8]
+//    }
+
 
 
     private fun checkIntent() {
@@ -184,7 +205,7 @@ class CustomerDetailActivity : AppCompatActivity() {
 
     private fun changeSomeText(customer: Customer) {
         rl_scan.visibility = View.GONE
-        arrayOf(rl_information ,map_pic ).forEach { it.visibility = View.VISIBLE }
+        arrayOf(rl_information ).forEach { it.visibility = View.VISIBLE }
         title_detail.text = "ویرایش مشتری"
         tv_record_location.text = "ویرایش موقعیت"
         userInformationExist(customer!!)
@@ -200,7 +221,7 @@ class CustomerDetailActivity : AppCompatActivity() {
 
     private fun initRecordLocation() {
         btn_record_location.setOnClickListener {
-            if (checkLatLong(terminalNumber_title.text.toString())) {
+            if (checkLatLong(et_TerminalNumber.text.toString())) {
                 var intent = Intent(this, MapsActivity::class.java)
                 intent.putExtra("latitude", cm?.latitude)
                 intent.putExtra("longitude", cm?.longitude)//
@@ -220,7 +241,6 @@ class CustomerDetailActivity : AppCompatActivity() {
         mWebView.visibility = View.VISIBLE
         mWebView.webViewClient = WebViewClient()
         mWebView.loadUrl("file:///android_asset/map.html");
-//        mWebView.loadUrl("https://www.geeksforgeeks.org/")
         mWebView.settings.javaScriptEnabled = true
         mWebView.settings.setSupportZoom(true)
     }
@@ -278,18 +298,7 @@ class CustomerDetailActivity : AppCompatActivity() {
 //    }
 
 
-    private fun userInformationExist(c: Customer) {
-        storeName.text = c?.storeName
-        terminalNumber_title.text = c?.terminalnNumer
-        customerName.text = c?.deviceOwner
-        phone_sabet.text = c?.phoneSabet
-        phone_hamrah.text = c?.phoneHamrah
-        support_Tecnisiyan.text = c?.supportName
-        terminalNumber_info.text = c?.terminalnNumer
-        deviceModel.text = c?.deviceModel
-        deviceSerial.text = c?.deviceSerial
-        rollNumber.text = c?.rollNumber
-    }
+
 
 
     private fun initBack() {
