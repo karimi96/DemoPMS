@@ -67,6 +67,8 @@ dependencies {
 
     implementation 'com.airbnb.android:lottie:3.6.0'
 
+    implementation 'com.google.code.gson:gson:2.8.9'
+
 
 //    red data from assets library
 //    implementation 'com.github.humazed:RoomAsset:1.0.3'
