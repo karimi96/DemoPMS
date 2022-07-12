@@ -109,4 +109,30 @@ import androidx.room.PrimaryKey
     }
 
 
+ @Ignore
+    constructor(
+        storeName: String?,
+        terminalnNumer: String?,
+        deviceOwner: String?,
+        phoneSabet: String?,
+        phoneHamrah: String?,
+        address: String?,
+        supportName: String?,
+        deviceModel: String?,
+        deviceSerial: String?,
+        rollNumber: String?,
+    ) {
+        this.storeName = storeName
+        this.terminalnNumer = terminalnNumer
+        this.deviceOwner = deviceOwner
+        this.phoneSabet = phoneSabet
+        this.phoneHamrah = phoneHamrah
+        this.address = address
+        this.supportName = supportName
+        this.deviceModel = deviceModel
+        this.deviceSerial = deviceSerial
+        this.rollNumber = rollNumber
+    }
+
+
 }
