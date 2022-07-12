@@ -8,6 +8,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import com.google.gson.Gson
 import com.karimi.googlemap.R
 import com.karimi.googlemap.activity.customerDetail.CustomerDetailActivity
 import com.karimi.googlemap.database.DatabaseHelper
@@ -42,6 +43,8 @@ class MapsActivity : AppCompatActivity() {
     private var longitude : Double = 0.0
     private var latitude : Double = 0.0
 
+    private var c : Customer? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,16 +58,22 @@ class MapsActivity : AppCompatActivity() {
 
         if (id != null){
             Log.e("111", " show lot lang : "  + " id is not null")
-            Log.e("111", " show lot lang : "  + " id is not null  $id")
+            Log.e("111", " show lot lang :  id is not null  $id")
             var customer : Customer = dao.getOneCustomer(id!!)
-            Log.e("111", " show lot lang : $latitude    $longitude")
+//            marker.position = GeoPoint(34.666620,50.871070)
             marker.position = GeoPoint(customer.latitude!!, customer.longitude!!)
+//            marker.position = GeoPoint(geoPoint.latitude, geoPoint.longitude)
+            Log.e("111", " show lot lang : $id")
+            Log.e("111", " show lot lang : $latitude    $longitude")
+            Log.e("111", " show lot lang : ${customer.latitude}")
+            Log.e("111", " geopoint : ${geoPoint.latitude}")
+
             marker.icon  = getDrawable(R.drawable.locationblue)
             map.overlays.add(marker)
             map.invalidate()
         }
 
-//        addLastLocationMarker()
+//      addLastLocationMarker()
         addMarker()
         initArrayUser()
         initSaveLocationBtn()
@@ -80,7 +89,7 @@ class MapsActivity : AppCompatActivity() {
         map.setBuiltInZoomControls(true)
         map.setMultiTouchControls(true)
         val mapController = map.controller
-        mapController.setZoom(9.0)
+        mapController.setZoom(13.0)
         val startPoint = GeoPoint(34.640557,50.881634) //55.751442, 37.615569
         mapController.setCenter(startPoint) }
 
@@ -94,13 +103,22 @@ class MapsActivity : AppCompatActivity() {
         if (intent.extras != null){
             if (intent.getStringExtra("edittext_value") != null){
                 et = intent.getStringExtra("edittext_value").toString()
+                c = Gson().fromJson( intent.getStringExtra("dd") , Customer::class.java)
                 Log.e("111", "onCreate get et from new user: $et")
 
             }else if (intent.getIntExtra("id_customer_detail" ,0) != null){
+                id = intent.getIntExtra("id_customer_detail" , 0)
                 longitude = intent.getDoubleExtra("latitude",0.0)
                 latitude = intent.getDoubleExtra("longitude",0.0)
-                id = intent.getIntExtra("id_customer_detail" , 0)
-                Log.e("111", "onCreate  get from edit: $id")
+                geoPoint.longitude = longitude
+                geoPoint.latitude = latitude
+                Log.e("111", "checkIntentTEST: $latitude", )
+                Log.e("111", "checkIntentTEST: $longitude", )
+                Log.e("111", "checkIntentTEST + geopoint: ${geoPoint.latitude}" )
+//                var s = intent.getStringExtra("dd")
+//                c = Gson().fromJson(s , Customer::class.java)
+                Log.e("666", "checkIntentTEST: ${c?.phoneHamrah}" )
+
             }
         }
     }
@@ -121,7 +139,6 @@ class MapsActivity : AppCompatActivity() {
 
 
     private fun addMarker(){
-//        marker = Marker(map)
         val mReceive: MapEventsReceiver = object : MapEventsReceiver {
             override fun singleTapConfirmedHelper(p: GeoPoint): Boolean {
                 Log.e("111", " add marker : "  + " id is null and add new marker")
@@ -143,6 +160,7 @@ class MapsActivity : AppCompatActivity() {
     }
 
 
+
     private fun initArrayUser(){
         var dbFromAssets = DBHelperJavaSimin(this)
         userInfo = dbFromAssets.getTerminal_number(et)
@@ -153,12 +171,13 @@ class MapsActivity : AppCompatActivity() {
     private fun initSaveLocationBtn(){
         save_map.setOnClickListener {
             if (latitude != 0.0) {
-                if (geoPoint.longitude == 0.0){
-                    toast("موقعیت مورد نظر را انتخاب کنید")
-                }else{
+//                if (geoPoint.longitude == 0.0){
+//                    toast("موقعیت مورد نظر را انتخاب کنید")
+//                }
+//                {
                     dao.updateLatLong(geoPoint.latitude,geoPoint.longitude, id!!)
                     finish()
-                }
+//                }
             }else {
                 Log.e("111", "initSaveLocationBtn:  new user with "  )
                 if (geoPoint.longitude == 0.0) {
@@ -166,8 +185,11 @@ class MapsActivity : AppCompatActivity() {
                 }else{
                     Log.e("111", "initSaveLocationBtn:  new user with "  +  geoPoint.longitude)
 
-                    dao.insert(Customer(userInfo[0],userInfo[1],userInfo[2],userInfo[3],userInfo[4],userInfo[9],userInfo[5],
-                        userInfo[6],userInfo[7],userInfo[8],geoPoint.longitude , geoPoint.latitude))
+//                    dao.insert(Customer(userInfo[0],userInfo[1],userInfo[2],userInfo[3],userInfo[4],userInfo[9],userInfo[5],
+//                        userInfo[6],userInfo[7],userInfo[8],geoPoint.longitude , geoPoint.latitude))
+                    dao.insert(Customer(
+                        c?.storeName,c?.terminalnNumer,c?.deviceOwner,c?.phoneSabet,c?.phoneHamrah,c?.address,c?.supportName,
+                        c?.deviceModel,c?.deviceSerial,c?.rollNumber,geoPoint.longitude , geoPoint.latitude))
                     finish()
                 }
             }

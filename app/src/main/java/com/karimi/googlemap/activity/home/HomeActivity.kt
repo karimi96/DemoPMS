@@ -31,8 +31,6 @@ class HomeActivity : AppCompatActivity() {
         initFab()
         setReverseRecycler()
 
-
-        test.setOnClickListener { startActivity(Intent(this , Test::class.java))}
     }
 
 
