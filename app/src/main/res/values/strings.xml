@@ -1,10 +1,13 @@
 <resources>
-    <string name="app_name">GoogleMap</string>
+    <string name="app_name">PMS Beta</string>
     <string name="title_activity_maps">MapsActivity</string>
 
     <string name="hintName"><font size="13">نام مشتری را وارد کنید</font></string>
     <string name="hintDevice"><font size="13">نام دستگاه را وارد کنید</font></string>
     <string name="hintPhone"><font size="13">شماره همراه را وارد کنید</font></string>
+    <string name="hintSupport"><font size="38">پشتیبان دستگاه</font>
+
+    </string>
 
 
 </resources>
