@@ -26,6 +26,7 @@
             android:background="@color/white"
             android:fontFamily="@font/iran_sans"
             android:paddingEnd="10dp"
+            android:textColor="@color/text_hint"
             android:text="مشخصات مشتری"
             android:textSize="14dp" />
 

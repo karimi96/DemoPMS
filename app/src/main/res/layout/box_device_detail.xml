@@ -25,10 +25,11 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
             android:background="@color/white"
+            android:textColor="@color/text_hint"
             android:fontFamily="@font/iran_sans"
-            android:textSize="14dp"
             android:paddingEnd="10dp"
-            android:text="مشخصات دستگاه" />
+            android:text="مشخصات دستگاه"
+            android:textSize="14dp" />
 
     </RelativeLayout>
 
@@ -45,6 +46,7 @@
         app:boxStrokeColor="@color/text_hint"
         app:boxStrokeWidth="1dp"
         app:endIconMode="clear_text"
+        android:gravity="start"
         app:hintTextColor="@color/text_hint"
         app:startIconDrawable="@drawable/ic_person"
         app:startIconTint="@color/text_hint">
@@ -52,9 +54,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_SupportDevice"
             android:layout_width="match_parent"
+            android:hint="پشتیبان دستگاه"
             android:layout_height="wrap_content"
             android:fontFamily="@font/iran_sans"
-            android:hint="پشتیبان دستگاه"
             android:textColor="@color/text_main"
             android:textSize="14dp" />
 

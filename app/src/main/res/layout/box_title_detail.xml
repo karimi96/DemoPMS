@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/storeName"
     android:layout_gravity="center_horizontal"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
+    android:gravity="center"
     android:layout_height="wrap_content"
     android:fontFamily="@font/iran_sans"
-    android:layout_marginTop="20dp"
+    android:background="@drawable/border_store"
+    android:paddingVertical="10dp"
+    android:layout_marginHorizontal="15dp"
+    android:layout_marginVertical="10dp"
     android:textSize="16dp"
     android:text="کیتوبال"
     android:textColor="@color/text_main" />
